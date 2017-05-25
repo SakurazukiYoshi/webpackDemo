@@ -10,3 +10,20 @@
 	-热转换
 	-基础的调试
 	-js的模块化
+
+
+----------
+
+
+
+# demo查看方法
+
+	
+
+
+	1. clone代码
+	2. npm install 
+	3. 在cmd 中输入 webpack
+	4. npm start 即可
+	 
+	
