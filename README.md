@@ -1,29 +1,19 @@
 # 简介
 
 
-这是个人配置的一个基础的webpack的配置
+这是个人配置的gulp+webpack的模板，分工比较明确
 
 
-包含以下功能：
+webpack用于处理代码的模块化
 
-	-less和css的配置
-	-热转换
-	-基础的调试
-	-js的模块化
+gulp用于处理less的转化，代码的压缩，复制等等
+	 
 
-
-----------
-
-
-
-# demo查看方法
-
-	
+# 使用步骤
 
 
 	1. clone代码
-	2. npm install 
-	3. 在cmd 中输入 webpack
-	4. npm start 即可
-	 
+	2. npm install
+	3. cmd中运行   webpack -w
+	4. cmd中运行   gulp s
 	
