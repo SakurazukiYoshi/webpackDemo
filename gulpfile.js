@@ -38,6 +38,11 @@ gulp.task("js",function(){
         .pipe(reload({
             stream:true
         }));//自动重新刷新页面
+    gulp.src("src/plugins/*.js")   //找到文件下的所有js文件
+        .pipe(gulp.dest("dist/plugins"))  //将转化成js文件放在dist/scripts中
+        .pipe(reload({
+            stream:true
+        }));//自动重新刷新页面
 });
 
 
@@ -60,8 +65,8 @@ gulp.task("html",function(){
         removeEmptyAttributes: true,//删除所有空格作属性值 <input id="" /> ==> <input />
         removeScriptTypeAttributes: true,//删除<script>的type="text/javascript"
         removeStyleLinkTypeAttributes: true,//删除<style>和<link>的type="text/css"
-        minifyJS: true,//压缩页面JS
-        minifyCSS: true//压缩页面CSS
+        //minifyJS: true,//压缩页面JS
+        //minifyCSS: true//压缩页面CSS
     };
     gulp.src("src/*.html")    //用于调试js代码时，找到对应的js文件
         .pipe(gulp.dest("devDependencies"))
@@ -70,12 +75,12 @@ gulp.task("html",function(){
         .pipe(reload({
             stream:true
         }));//自动重新刷新页面
-/*    gulp.src("devDependencies/!*.html")    //找到文件下的所有文件
-        .pipe(htmlmin(options))
-        .pipe(gulp.dest("dist"))//复制到dist中
-        .pipe(reload({
-            stream:true
-        }));//自动重新刷新页面*/
+    /*    gulp.src("devDependencies/!*.html")    //找到文件下的所有文件
+     .pipe(htmlmin(options))
+     .pipe(gulp.dest("dist"))//复制到dist中
+     .pipe(reload({
+     stream:true
+     }));//自动重新刷新页面*/
 });
 // 静态服务器
 gulp.task('serve', function() {
@@ -88,6 +93,7 @@ gulp.task('serve', function() {
     gulp.watch("src/images/*.*",["image"]);
     gulp.watch("devDependencies/js/*.map",["js"]);
     gulp.watch("devDependencies/js/*.js",["js"]);
+    gulp.watch("src/plugins/*.js",["js"]);
     gulp.watch(["src/css/*.less","src/css/*.css","!src/css/_*.less"],["css"]);
 });
 
